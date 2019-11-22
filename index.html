@@ -1,0 +1,70 @@
+<html>
+	<head>
+		<link href="https://fonts.googleapis.com/css?family=Carter+One" rel="stylesheet">
+		<link rel="stylesheet" type="text/css" href="index.css">
+	</head>
+	<body onLoad="Start()"  style="height: 100%; margin: 0;">
+
+		
+		<div id="UI">
+			<div class="panel_container">
+				<div>
+					<div class="panel" id="settings">
+						<h1 class="title">SETTINGS</h1>
+						<div class="container_checkbox">
+							<h1 class="label" >Change time scale</h1>
+							<input class="inputfield" id="console_input"
+									style="font-size: 16px;
+									font-family: Carter One;"
+									type="text"
+									name="fname"
+									value="1">
+						</div>
+						<div class="container_checkbox">
+							<h1 class="label">Display orbit</h1>
+							<input class="checkbox" id="orbite_checkbox" type="checkbox" value="Car" checked>
+						</div>
+						<div class="container_checkbox">
+							<h1 class="label">Display names</h1>
+							<input class="checkbox"	id="name_checkbox" type="checkbox" value="Car" checked>
+						</div>
+					</div>
+					<div class="panel" id="tools">
+						<h1 class="title">TOOLS</h1>
+						<button class="toolButton" onclick="Start()" type="button">Generate new system</button>
+						<button class="toolButton" onclick="ResetPosition()" type="button">Reset display</button>
+					</div>
+					<div class="panel" id="controls">
+							<h1 class="title">CONTROLS</h1>
+							<h1 class="label">Mouse wheel to zoom in and out</h1>
+							<h1 class="label">Mouse click to drag your system around</h1>
+							<h1 class="label">Click on a planet to have information about it</h1>
+					</div>
+				</div>
+
+				<div>
+					<div class="panel" id="satelite">
+						<h1 class="title">Satelite Information</h1>
+						<h1 class="title" id="sateliteName"></h1>
+						<div id="satelitePreview"></div>
+						<p class="label" id="sateliteInformation"></p>
+				</div>
+
+				</div>
+			</div>
+			<button id="hide" class="toolButton" onclick="ShowHide()">Hide</button>
+			<h1 class="buildTitle">@louisperdu version 1.1</h1>
+		</div>
+
+		<canvas
+				onmousemove="MovingMouse(event)"
+				onmousedown="MouseDown(event)" 
+				onmouseup="MouseUp(event)"
+				id="canvas">
+		</canvas>
+	</body>
+	<script src="Utility.js"></script>
+	<script src="Core.js"></script>
+	<script src="Interface.js"></script>
+
+</html>
